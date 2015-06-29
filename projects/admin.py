@@ -3,7 +3,7 @@ from projects.models import Project
 
 class ProjectAdmin(admin.ModelAdmin):
     """
-    Create the URL slug in the form based off of the project name.
+    Behaviour specific to the Django admin panel.
     """
     prepopulated_fields = {'slug': ('name',)}
 
