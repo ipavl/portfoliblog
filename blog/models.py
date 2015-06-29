@@ -20,7 +20,9 @@ class Post(models.Model):
         default='uncategorized',
     )
 
-    body = models.TextField()
+    body = models.TextField(
+        help_text='Write your post content here. You may use Markdown.',
+    )
 
     def __str__(self):
         """
