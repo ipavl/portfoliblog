@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+
+<body>
+<h1>Projects</h1>
+
+{% for project in projects %}
+    <h2>{{ project.name }}</h2>
+
+    <!-- TODO: Display image -->
+
+    {% if project.project_url %}
+    <p><strong>Overview:</strong> <a href="{{ project.project_url }}">{{ project.project_url }}</a></p>
+    {% endif %}
+
+    {% if project.demo_url %}
+    <p><strong>Demo:</strong> <a href="{{ project.demo_url }}">{{ project.demo_url }}</a></p>
+    {% endif %}
+
+    {% if project.source_url %}
+    <p><strong>Source:</strong> <a href="{{ project.source_url }}">{{ project.source_url }}</a></p>
+    {% endif %}
+
+    <p><strong>Technologies:</strong> {{ project.technologies }}</p>
+
+    <p>{{ project.description }}</p>
+{% endfor %}
+
+</body>
+
+</html>

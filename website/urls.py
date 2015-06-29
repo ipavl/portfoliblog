@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+import projects.views as project
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^projects/', project.index, name='index'),
 ]
