@@ -9,6 +9,7 @@ class Post(models.Model):
     slug = models.SlugField(
         max_length=200,
         unique=True,
+        help_text='Text to be shown in the URL for this item. Auto-populates based on the title field.',
     )
 
     date = models.DateTimeField(
