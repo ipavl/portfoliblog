@@ -1,0 +1,26 @@
+body {
+    font-family: "Open Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post-meta {
+    color: #828282;
+}
+
+/* Override default navbar active style */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .open > a {
+    box-shadow: none;
+    font-weight: bold;
+}

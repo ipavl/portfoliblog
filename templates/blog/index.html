@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-</head>
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock %}
 
-<body>
-<h1>Posts</h1>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+        <h2><a href="#TODO">{{ post.title }}</a></h2>
 
-{% for post in posts %}
-    <h2><a href="#TODO">{{ post.title }}</a></h2>
+        <div class="post-meta">Published {{ post.date }} in <a href="#TODO">{{ post.category }}</a></div>
 
-    <div class="post-meta">Published {{ post.date }} in <a href="#TODO">{{ post.category }}</a></div>
-
-    <div class="post-body">{{ post.body }}</div>
-
-    <p>{{ project.description }}</p>
-{% endfor %}
-
-</body>
-
-</html>
+        <div class="post-body">{{ post.body|linebreaks }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}
