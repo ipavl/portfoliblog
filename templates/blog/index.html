@@ -8,9 +8,11 @@
         <div class="post">
             <h2><a href="{{ post.slug }}">{{ post.title }}</a></h2>
 
-            <div class="post-meta">Published {{ post.date }} in <a href="category/{{ post.category }}">{{ post.category }}</a></div>
+            <div class="post-meta">Published {{ post.date }} in
+                <a href="category/{{ post.category }}">{{ post.category }}</a></div>
 
-            <div class="post-body">{% filter markdownify %}{{ post.body }}{% endfilter %}</div>
+            <div class="post-body">{% filter markdownify %}{{ post.body|truncatewords:70 }}
+                <a href="{{ post.slug }}">(read more)</a>{% endfilter %}</div>
         </div>
     {% endfor %}
 {% endblock %}
