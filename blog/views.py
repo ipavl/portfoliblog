@@ -8,3 +8,8 @@ def index(request):
 def view_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     return render_to_response('blog/post.html', {"post": post})
+
+def view_category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    return render_to_response('blog/category.html', {"category": category,
+                                                     "posts": Post.objects.filter(category=category).order_by('-date')})

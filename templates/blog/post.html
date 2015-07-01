@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="post">
-        <div class="post-meta">Published {{ post.date }} in <a href="#TODO">{{ post.category }}</a></div>
+        <div class="post-meta">Published {{ post.date }} in <a href="category/{{ post.category }}">{{ post.category }}</a></div>
 
         <div class="post-body">{% filter markdownify %}{{ post.body }}{% endfilter %}</div>
     </div>
