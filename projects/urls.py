@@ -1,4 +1,4 @@
-"""website URL Configuration
+"""common URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -13,16 +13,10 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
-from django.contrib import admin
-
-import blog.views as blog
-import common.views as common
-import projects.views as project
+from django.conf.urls import url
+from . import views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^projects/', include('projects.urls')),
-    url(r'^', include('common.urls')),
+    url(r'^$', views.index),
+    url(r'^(?P<slug>[-\w]+)$', views.view_project_details, name='view_project_details'),
 ]

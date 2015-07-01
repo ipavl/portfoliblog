@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load markdown_helper %}
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block content %}
+    <div class="project">
+        <!-- TODO: Display image -->
+
+        {% if project.project_url %}
+            <p><strong>Overview:</strong> <a href="{{ project.project_url }}">{{ project.project_url }}</a></p>
+        {% endif %}
+
+        {% if project.demo_url %}
+            <p><strong>Demo:</strong> <a href="{{ project.demo_url }}">{{ project.demo_url }}</a></p>
+        {% endif %}
+
+        {% if project.source_url %}
+            <p><strong>Source:</strong> <a href="{{ project.source_url }}">{{ project.source_url }}</a></p>
+        {% endif %}
+
+        <p><strong>Date:</strong> {{ project.date }}</p>
+
+        <p><strong>Technologies:</strong> {{ project.technologies }}</p>
+
+        <p>{% filter markdownify %}{{ project.description }}{% endfilter %}</p>
+    </div>
+{% endblock %}
