@@ -10,10 +10,8 @@
         <!-- TODO: Display image -->
 
         {% if project.project_url %}
-            <p><strong>Overview:</strong> <a href="{{ project.project_url }}">{{ project.project_url }}</a></p>
+            <p><strong>Project homepage:</strong> <a href="{{ project.project_url }}">{{ project.project_url }}</a></p>
         {% endif %}
-
-        <p><strong>Technologies:</strong> {{ project.technologies }}</p>
 
         <p>{% filter markdownify %}{{ project.description|truncatewords:30 }}
             <a href="{{ project.slug }}">(more details)</a>{% endfilter %}</p>

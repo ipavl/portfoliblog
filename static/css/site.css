@@ -2,8 +2,8 @@ body {
     font-family: "Open Sans", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
-.content {
-    margin-left: 40px;
+h1 {
+    margin-bottom: 15px;
 }
 
 footer {
@@ -12,10 +12,15 @@ footer {
 }
 
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .post-meta {
+    color: #828282;
+    margin-bottom: 10px;
+}
+
+.project-meta {
     color: #828282;
 }
 
