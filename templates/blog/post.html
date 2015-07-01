@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load markdown_helper %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <div class="post-meta">Published {{ post.date }} in <a href="#TODO">{{ post.category }}</a></div>
+
+        <div class="post-body">{% filter markdownify %}{{ post.body }}{% endfilter %}</div>
+    </div>
+{% endblock %}

@@ -4,13 +4,13 @@
 {% block title %}Blog{% endblock %}
 
 {% block content %}
-        {% for post in posts %}
-            <div class="post">
-                <h2><a href="#TODO">{{ post.title }}</a></h2>
+    {% for post in posts %}
+        <div class="post">
+            <h2><a href="{{ post.slug }}">{{ post.title }}</a></h2>
 
-                <div class="post-meta">Published {{ post.date }} in <a href="#TODO">{{ post.category }}</a></div>
+            <div class="post-meta">Published {{ post.date }} in <a href="{{ post.category }}">{{ post.category }}</a></div>
 
-                <div class="post-body">{% filter markdownify %}{{ post.body }}{% endfilter %}</div>
-            </div>
-        {% endfor %}
+            <div class="post-body">{% filter markdownify %}{{ post.body }}{% endfilter %}</div>
+        </div>
+    {% endfor %}
 {% endblock %}
