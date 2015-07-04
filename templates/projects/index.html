@@ -4,6 +4,9 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
+    {% if projects.count == 0 %}
+        There aren't any projects to show.
+    {% endif %}
     {% for project in projects %}
         <h2><a href="{{ project.slug }}">{{ project.name }}</a></h2>
 
