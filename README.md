@@ -25,6 +25,7 @@ Features
 * Manage most content through Django admin (`/admin/`)
 * Basic blogging features (currently no drafts, comments, or multiple authors)
 * Consistent look across project details pages and an automatic project index page
+* URL shortener
 
 Getting Started
 ---------------
