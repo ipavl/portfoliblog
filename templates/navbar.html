@@ -1,3 +1,4 @@
+{% load navbar_static_pages %}
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <!--
@@ -23,6 +24,8 @@
         <li><a href="/">Home</a></li>
         <li><a href="/blog/">Blog</a></li>
         <li><a href="/projects/">Projects</a></li>
-        <li><a href="/about/">About</a></li>
+        {% for page in pages|get_navbar_pages %}
+            <li><a href="/{{ page.slug }}/">{{ page.title }}</a></li>
+        {% endfor %}
     </ul>
 </div><!-- /.navbar-collapse -->

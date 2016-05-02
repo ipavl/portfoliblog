@@ -18,6 +18,7 @@ from django.contrib import admin
 
 import blog.views as blog
 import common.views as common
+import pages.views as page
 import projects.views as project
 
 urlpatterns = [
@@ -25,5 +26,6 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^projects/', include('projects.urls')),
     url(r'^go/', include('shortener.urls')),
+    url(r'^(?P<slug>[-\w]+)', page.view_page, name='view_page'),
     url(r'^', include('common.urls')),
 ]
