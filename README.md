@@ -6,17 +6,6 @@ Portfoliblog is, as its name implies, both a portfolio and a blog. It is built w
 Portfoliblog is currently intended for individuals, however it may also fit the needs of teams - small manual changes
 may be required to add features such as multi-user blog post authoring for the moment in order to satisfy team needs.
 
-Requirements
-------------
-
-* Python
-* Django
-* the Markdown module
-* the Pillow module (if uploading project thumbnails)
-* A separate database server if SQLite is not preferable
-
-**Note:** Only Python 3 with Django 1.8 has been tested.
-
 Features
 --------
 
