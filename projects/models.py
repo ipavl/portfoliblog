@@ -56,7 +56,6 @@ class Project(models.Model):
         """
         return '%s' % self.name
 
-    @permalink
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
-        return reverse('views.view_project', args=[str(self.slug)])
+        return reverse('view_project_details', args=[str(self.slug)])

@@ -30,7 +30,6 @@ class Page(models.Model):
         """
         return '%s' % self.title
 
-    @permalink
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
-        return reverse('views.view_page', args=[str(self.slug)])
+        return reverse('view_page', args=[str(self.slug)])
