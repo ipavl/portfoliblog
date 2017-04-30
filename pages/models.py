@@ -23,6 +23,11 @@ class Page(models.Model):
         help_text='If checked, will display this page as a link in the main site navigation.',
     )
 
+    menu_sort_order = models.IntegerField(
+        default=0,
+        help_text='Sort order of the link if displaying in the main site navigation. Lowest-to-highest = left-to-right.',
+    )
+
     def __str__(self):
         """
         How the page will be shown in places such as Django admin.

@@ -6,4 +6,4 @@ register = template.Library()
 
 @register.filter()
 def get_navbar_pages(self):
-    return Page.objects.filter(show_in_menu=True)
+    return Page.objects.filter(show_in_menu=True).order_by('menu_sort_order')
